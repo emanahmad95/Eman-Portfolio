@@ -1160,8 +1160,42 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightboxBtn();}
 
 // FORM
 function handleFormSubmit(){
-  alert('Message sent! To make this functional, connect to Formspree or EmailJS.');
+  const name = document.querySelector('input[placeholder="Your first name"]').value;
+  const email = document.querySelector('input[type="email"]').value;
+  const subject = document.querySelector('input[placeholder="Collaboration, research, opportunity, or hello!"]').value;
+  const message = document.querySelector('textarea').value;
+
+  if(!name || !email || !message){
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/xjgdayzd', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, subject, message })
+  })
+  .then(res => {
+    if(res.ok){
+      btn.textContent = '✅ Message Sent!';
+      btn.style.background = '#2d7a3a';
+      document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => el.value = '');
+    } else {
+      btn.textContent = '❌ Failed. Try Again.';
+      btn.disabled = false;
+    }
+  })
+  .catch(() => {
+    btn.textContent = '❌ Error. Try Again.';
+    btn.disabled = false;
+  });
 }
+
+
 </script>
 </body>
 </html>
