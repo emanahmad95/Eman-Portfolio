@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eman Ahmad – Business Data Analytics & Global Ambassador</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --beige:#EFEBE4;--navy:#1D2A44;--navy-light:#2d3f63;--navy-dark:#131d30;
+  --white:#FDFBF7;--amber:#D4AF37;--terra:#C68B59;
+  --text-dark:#1D2A44;--text-mid:#4a5568;--text-light:#8a9ab5;
+  --border:rgba(29,42,68,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--beige);color:var(--text-dark);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(253,251,247,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 4%;display:flex;align-items:center;justify-content:space-between;height:66px;transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(29,42,68,0.09);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--navy);letter-spacing:.02em;text-decoration:none;flex-shrink:0;}
+.nav-logo span{color:var(--amber);}
+.nav-links{display:flex;gap:1.3rem;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--text-mid);font-size:.78rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;transition:color .2s;position:relative;white-space:nowrap;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--amber);transition:width .3s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:.42rem 1rem!important;border-radius:4px;}
+.nav-cta:hover{background:var(--amber)!important;color:var(--navy)!important;}
+.nav-cta::after{display:none!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s;}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:1.5rem 5%;z-index:99;flex-direction:column;gap:1.1rem;max-height:calc(100vh - 66px);overflow-y:auto;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:var(--text-mid);text-decoration:none;font-size:.92rem;font-weight:500;padding:.3rem 0;border-bottom:1px solid var(--border);}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;background:var(--white);position:relative;overflow:hidden;}
+.hero-accent-line{position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--amber),var(--terra));}
+.hero-bg-circle{position:absolute;border-radius:50%;background:var(--beige);}
+.hero-bg-circle.c1{width:520px;height:520px;right:-110px;top:-110px;opacity:.65;}
+.hero-bg-circle.c2{width:280px;height:280px;right:220px;bottom:-60px;opacity:.3;}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;}
+.hero-tag{display:inline-block;font-size:.71rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);background:rgba(198,139,89,.1);padding:.38rem .9rem;border-radius:2px;margin-bottom:1.4rem;border-left:2px solid var(--terra);}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:600;line-height:1.05;color:var(--navy);margin-bottom:1rem;}
+.hero-name em{font-style:italic;color:var(--amber);}
+.hero-typing-wrap{font-size:1.02rem;color:var(--text-mid);margin-bottom:1.4rem;min-height:1.8em;}
+.hero-typing-wrap .role-prefix{color:var(--text-light);font-size:.9rem;}
+#typed-role{color:var(--navy);font-weight:500;border-right:2px solid var(--amber);padding-right:3px;animation:blink .8s step-end infinite;}
+@keyframes blink{50%{border-color:transparent;}}
+.hero-bio{font-size:.95rem;line-height:1.85;color:var(--text-mid);max-width:490px;margin-bottom:2.2rem;}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;}
+.btn-primary{background:var(--navy);color:var(--white);padding:.8rem 1.8rem;border-radius:4px;text-decoration:none;font-size:.86rem;font-weight:500;letter-spacing:.03em;border:2px solid var(--navy);transition:all .25s;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;}
+.btn-primary:hover{background:var(--amber);border-color:var(--amber);color:var(--navy);}
+.btn-outline{background:transparent;color:var(--navy);padding:.8rem 1.8rem;border-radius:4px;text-decoration:none;font-size:.86rem;font-weight:500;letter-spacing:.03em;border:2px solid var(--navy);transition:all .25s;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-github{background:var(--navy-dark);color:var(--white);padding:.8rem 1.8rem;border-radius:4px;text-decoration:none;font-size:.86rem;font-weight:500;letter-spacing:.03em;border:2px solid var(--navy-dark);transition:all .25s;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;}
+.btn-github:hover{background:var(--amber);border-color:var(--amber);color:var(--navy);}
+.hero-stats{display:flex;gap:2.2rem;margin-top:2.8rem;padding-top:1.8rem;border-top:1px solid var(--border);flex-wrap:wrap;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:600;color:var(--navy);line-height:1;}
+.stat-num span{color:var(--amber);}
+.stat-label{font-size:.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.08em;margin-top:.28rem;}
+.hero-image-side{display:flex;justify-content:center;align-items:center;position:relative;}
+.hero-photo-frame{width:370px;height:470px;border-radius:8px 80px 8px 80px;background:var(--beige);border:3px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero-photo-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--amber),var(--terra));z-index:1;}
+.photo-placeholder{display:flex;flex-direction:column;align-items:center;gap:.75rem;color:var(--text-light);}
+.photo-placeholder .icon-circle{width:100px;height:100px;border-radius:50%;background:var(--white);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.photo-placeholder p{font-size:.73rem;letter-spacing:.05em;text-transform:uppercase;text-align:center;line-height:1.6;}
+.hero-badge{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.65rem 1rem;box-shadow:0 4px 16px rgba(29,42,68,.1);font-size:.76rem;font-weight:500;color:var(--navy);display:flex;align-items:center;gap:.45rem;}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);}
+.badge-top{top:40px;right:-20px;}
+.badge-bottom{bottom:60px;left:-20px;}
+
+/* ── SHARED ── */
+section{padding:96px 5%;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-label{font-size:.69rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:.7rem;display:flex;align-items:center;gap:.75rem;}
+.section-label::after{content:'';flex:0 0 40px;height:1px;background:var(--terra);}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1.4rem;}
+.section-title em{font-style:italic;color:var(--amber);}
+.section-desc{font-size:.95rem;color:var(--text-mid);line-height:1.82;max-width:620px;}
+
+/* ── ABOUT ── */
+#about{background:var(--beige);}
+.about-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:5rem;align-items:start;margin-top:4rem;}
+.about-image-box{position:relative;}
+.about-img-frame{width:100%;padding-bottom:118%;background:var(--white);border-radius:4px 60px 4px 60px;border:2px solid var(--border);position:relative;overflow:hidden;}
+.about-img-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;color:var(--text-light);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;}
+.about-img-inner .big-icon{font-size:3rem;}
+.about-decor-box{position:absolute;bottom:-18px;right:-18px;width:110px;height:110px;background:var(--amber);border-radius:4px;z-index:-1;opacity:.25;}
+.about-quote{margin-top:1.25rem;background:var(--navy);color:var(--white);padding:1rem 1.25rem;border-radius:4px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;line-height:1.55;text-align:center;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.2rem;}
+.value-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.15rem;border-top:3px solid var(--amber);transition:transform .2s,box-shadow .2s;}
+.value-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(29,42,68,.08);}
+.value-card h4{font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:.38rem;text-transform:uppercase;letter-spacing:.05em;}
+.value-card p{font-size:.81rem;color:var(--text-mid);line-height:1.6;}
+.langs-row{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.4rem;}
+.lang-pill{font-size:.73rem;padding:.28rem .75rem;border-radius:20px;background:var(--white);border:1px solid var(--border);color:var(--navy);font-weight:500;}
+.lang-pill.native{background:rgba(212,175,55,.13);border-color:rgba(212,175,55,.35);color:#7a5f00;}
+
+/* ── SKILLS ── */
+#skills{background:var(--white);}
+.skills-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:3.5rem;}
+.skill-cat{background:var(--beige);border-radius:8px;padding:1.85rem;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;}
+.skill-cat:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(29,42,68,.09);}
+.skill-cat-icon{width:46px;height:46px;border-radius:6px;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.15rem;}
+.skill-cat h3{font-size:.97rem;font-weight:600;color:var(--navy);margin-bottom:.9rem;}
+.skill-tag-wrap{display:flex;flex-wrap:wrap;gap:.45rem;}
+.skill-tag{font-size:.74rem;padding:.26rem .68rem;border-radius:20px;font-weight:500;background:var(--white);color:var(--navy);border:1px solid var(--border);}
+.skill-tag.amber{background:rgba(212,175,55,.12);border-color:rgba(212,175,55,.3);color:#8a6a00;}
+.skill-tag.terra{background:rgba(198,139,89,.12);border-color:rgba(198,139,89,.3);color:#7a4a1a;}
+.skill-tag.navy{background:rgba(29,42,68,.08);border-color:rgba(29,42,68,.2);color:var(--navy);}
+
+/* ── RESEARCH ── */
+#research{background:var(--beige);}
+.research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:3.5rem;}
+.research-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:2rem;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;}
+.research-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(29,42,68,.1);}
+.research-card-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.25rem;}
+.research-icon{width:48px;height:48px;flex-shrink:0;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.research-meta{}
+.research-type{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--terra);font-weight:600;margin-bottom:.25rem;}
+.research-card h3{font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;}
+.research-card p{font-size:.86rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.25rem;flex:1;}
+.research-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;}
+.research-tag{font-size:.7rem;padding:.22rem .6rem;background:var(--beige);border-radius:3px;color:var(--text-mid);border:1px solid var(--border);}
+.research-status{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:#2d7a3a;background:rgba(45,122,58,.1);padding:.28rem .7rem;border-radius:20px;margin-bottom:1rem;}
+.research-status .dot-green{width:7px;height:7px;border-radius:50%;background:#2d7a3a;}
+.research-btns{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:auto;}
+.btn-small-github{display:inline-flex;align-items:center;gap:.4rem;font-size:.76rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--white);background:var(--navy-dark);padding:.45rem 1rem;border-radius:4px;text-decoration:none;transition:background .2s;}
+.btn-small-github:hover{background:var(--amber);color:var(--navy);}
+.btn-small-outline{display:inline-flex;align-items:center;gap:.4rem;font-size:.76rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);background:transparent;padding:.43rem 1rem;border-radius:4px;text-decoration:none;border:1.5px solid var(--border);transition:all .2s;}
+.btn-small-outline:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--white);}
+.timeline{margin-top:3.5rem;position:relative;}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--amber),var(--terra),transparent);}
+.tl-item{padding-left:58px;margin-bottom:2.5rem;position:relative;}
+.tl-dot{position:absolute;left:10px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--white);border:3px solid var(--amber);z-index:1;}
+.tl-card{background:var(--beige);border:1px solid var(--border);border-radius:8px;padding:1.65rem;transition:box-shadow .2s;}
+.tl-card:hover{box-shadow:0 6px 24px rgba(29,42,68,.08);}
+.tl-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.65rem;}
+.tl-role{font-size:1rem;font-weight:600;color:var(--navy);}
+.tl-date{font-size:.7rem;background:rgba(212,175,55,.15);color:#7a5f00;padding:.26rem .68rem;border-radius:20px;font-weight:500;white-space:nowrap;}
+.tl-org{font-size:.86rem;color:var(--terra);font-weight:500;margin-bottom:.7rem;}
+.tl-desc{font-size:.86rem;color:var(--text-mid);line-height:1.72;}
+.tl-desc ul{padding-left:1.1rem;margin-top:.35rem;}
+.tl-desc ul li{margin-bottom:.32rem;}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.9rem;}
+.tl-tag{font-size:.69rem;padding:.18rem .58rem;background:var(--white);border-radius:3px;color:var(--text-mid);border:1px solid var(--border);}
+
+/* ── TEACHING ── */
+#teaching{background:var(--beige);}
+.teaching-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:3.5rem;}
+.teach-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.85rem;border-top:4px solid var(--amber);transition:transform .2s,box-shadow .2s;}
+.teach-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(29,42,68,.09);}
+.teach-icon{font-size:2rem;margin-bottom:1rem;}
+.teach-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;}
+.teach-date{font-size:.7rem;color:var(--terra);font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.75rem;}
+.teach-card p{font-size:.84rem;color:var(--text-mid);line-height:1.72;}
+.teach-card ul{padding-left:1.1rem;margin-top:.5rem;}
+.teach-card ul li{font-size:.84rem;color:var(--text-mid);line-height:1.7;margin-bottom:.3rem;}
+.teach-highlight{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--navy);background:rgba(212,175,55,.15);padding:.3rem .75rem;border-radius:20px;margin-top:.9rem;}
+
+/* ── PROJECTS ── */
+#projects{background:var(--white);}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:3.5rem;}
+.project-card{background:var(--beige);border-radius:8px;border:1px solid var(--border);overflow:hidden;transition:transform .25s,box-shadow .25s;}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(29,42,68,.1);}
+.project-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.project-thumb.t1{background:linear-gradient(135deg,#1D2A44,#2d3f63);}
+.project-thumb.t2{background:linear-gradient(135deg,#3d2a10,#7a5020);}
+.project-thumb.t3{background:linear-gradient(135deg,#1a2d1a,#2d5020);}
+.project-thumb.t4{background:linear-gradient(135deg,#2a1a2d,#4a2d52);}
+.project-type-badge{position:absolute;top:12px;left:12px;font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;background:rgba(212,175,55,.92);color:var(--navy);padding:.2rem .58rem;border-radius:2px;font-weight:600;}
+.project-thumb-icon{font-size:2.7rem;opacity:.55;}
+.project-body{padding:1.4rem;}
+.project-body h3{font-size:.96rem;font-weight:600;color:var(--navy);margin-bottom:.45rem;}
+.project-date{font-size:.7rem;color:var(--text-light);margin-bottom:.5rem;font-weight:500;}
+.project-body p{font-size:.83rem;color:var(--text-mid);line-height:1.65;margin-bottom:.9rem;}
+.project-body ul{padding-left:1rem;margin-bottom:.9rem;}
+.project-body ul li{font-size:.82rem;color:var(--text-mid);line-height:1.65;margin-bottom:.28rem;}
+.project-link{font-size:.75rem;color:var(--terra);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;letter-spacing:.04em;text-transform:uppercase;transition:gap .2s;}
+.project-link:hover{gap:.6rem;}
+
+/* ── BOOKS ── */
+#books{background:var(--navy);color:var(--white);}
+#books .section-label{color:var(--amber);}
+#books .section-label::after{background:var(--amber);}
+#books .section-title{color:var(--white);}
+#books .section-title em{color:var(--amber);}
+#books .section-desc{color:rgba(253,251,247,.7);}
+.books-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;}
+.book-card{background:rgba(253,251,247,.06);border:1px solid rgba(253,251,247,.12);border-radius:8px;padding:2rem;text-align:center;transition:background .2s,transform .2s;}
+.book-card:hover{background:rgba(253,251,247,.1);transform:translateY(-4px);}
+.book-cover{width:96px;height:136px;background:var(--amber);border-radius:4px 10px 10px 4px;margin:0 auto 1.4rem;box-shadow:-6px 6px 0 rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:1.9rem;position:relative;}
+.book-cover::before{content:'';position:absolute;left:0;top:0;bottom:0;width:9px;background:rgba(0,0,0,.2);border-radius:4px 0 0 4px;}
+.book-card h3{font-family:'Cormorant Garamond',serif;font-size:1.06rem;font-weight:600;color:var(--white);margin-bottom:.38rem;line-height:1.35;}
+.book-card p{font-size:.81rem;color:rgba(253,251,247,.6);line-height:1.62;}
+.book-year{font-size:.7rem;color:var(--amber);font-weight:600;text-transform:uppercase;letter-spacing:.08em;display:block;margin-top:.45rem;}
+.book-visit-btn{display:inline-flex;align-items:center;gap:.35rem;margin-top:1rem;font-size:.73rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);background:var(--amber);padding:.38rem .95rem;border-radius:3px;text-decoration:none;transition:background .2s,transform .2s;border:none;cursor:pointer;}
+.book-visit-btn:hover{background:#c49a28;transform:scale(1.04);}
+
+/* ── EDUCATION ── */
+#education{background:var(--beige);}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;margin-top:3.5rem;}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.85rem;border-left:4px solid var(--amber);transition:box-shadow .2s;}
+.edu-card:hover{box-shadow:0 8px 24px rgba(29,42,68,.08);}
+.edu-year{font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;color:var(--terra);font-weight:600;margin-bottom:.45rem;}
+.edu-degree{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:.38rem;}
+.edu-school{font-size:.86rem;color:var(--text-mid);margin-bottom:.65rem;font-weight:500;}
+.edu-detail{font-size:.82rem;color:var(--text-light);line-height:1.62;}
+
+/* ── CERTIFICATIONS ── */
+#certifications{background:var(--white);}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem;}
+.cert-card{background:var(--beige);border:1px solid var(--border);border-radius:8px;padding:1.45rem;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
+.cert-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(29,42,68,.09);}
+.cert-top{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1rem;}
+.cert-icon{width:40px;height:40px;flex-shrink:0;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--amber);}
+.cert-info h4{font-size:.84rem;font-weight:600;color:var(--navy);margin-bottom:.28rem;line-height:1.35;}
+.cert-info p{font-size:.74rem;color:var(--text-mid);}
+.cert-info .cert-issuer{color:var(--terra);font-weight:500;}
+.cert-visit-btn{display:inline-flex;align-items:center;gap:.38rem;margin-top:auto;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--white);background:var(--navy);padding:.4rem .95rem;border-radius:3px;text-decoration:none;transition:background .2s;border:none;cursor:pointer;align-self:flex-start;}
+.cert-visit-btn:hover{background:var(--amber);color:var(--navy);}
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay{display:none;position:fixed;inset:0;background:rgba(13,19,30,.92);z-index:9999;align-items:center;justify-content:center;}
+.lightbox-overlay.active{display:flex;}
+.lightbox-box{position:relative;max-width:90vw;max-height:90vh;background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.lightbox-box img{display:block;max-width:90vw;max-height:80vh;object-fit:contain;}
+.lightbox-placeholder{width:680px;max-width:90vw;height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--text-mid);font-size:.92rem;padding:2rem;}
+.lightbox-placeholder .big{font-size:3.8rem;}
+.lightbox-placeholder p{text-align:center;line-height:1.72;max-width:400px;}
+.lightbox-placeholder code{font-size:.76rem;background:var(--beige);padding:.18rem .48rem;border-radius:3px;color:var(--navy);}
+.lightbox-close{position:absolute;top:12px;right:14px;background:var(--navy);color:var(--white);border:none;border-radius:50%;width:32px;height:32px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:1;}
+.lightbox-close:hover{background:var(--terra);}
+.lightbox-title{padding:.8rem 1.2rem;background:var(--navy);color:var(--white);font-size:.86rem;font-weight:500;}
+
+/* ── ACHIEVEMENTS ── */
+#achievements{background:var(--beige);}
+.ach-list{margin-top:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.ach-item{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.45rem;display:flex;gap:1.1rem;align-items:flex-start;transition:box-shadow .2s;}
+.ach-item:hover{box-shadow:0 6px 20px rgba(29,42,68,.07);}
+.ach-num{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:700;color:var(--amber);line-height:1;flex-shrink:0;width:44px;}
+.ach-text h4{font-size:.91rem;font-weight:600;color:var(--navy);margin-bottom:.28rem;}
+.ach-text p{font-size:.8rem;color:var(--text-mid);line-height:1.62;}
+.ach-text .ach-sub{font-size:.72rem;color:var(--terra);font-weight:500;margin-top:.2rem;}
+
+/* ── LEADERSHIP ── */
+#leadership{background:var(--white);}
+.lead-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.65rem;margin-top:3.5rem;}
+.lead-card{background:var(--beige);border:1px solid var(--border);border-radius:8px;padding:1.65rem;text-align:center;transition:transform .2s,box-shadow .2s;}
+.lead-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(29,42,68,.09);}
+.lead-logo{width:54px;height:54px;border-radius:50%;background:var(--navy);margin:0 auto 1.15rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+.lead-card h3{font-size:.91rem;font-weight:600;color:var(--navy);margin-bottom:.38rem;}
+.lead-card .role-tag{font-size:.7rem;color:var(--terra);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.68rem;display:block;}
+.lead-card p{font-size:.8rem;color:var(--text-mid);line-height:1.62;}
+
+/* ── CONTACT ── */
+#contact{background:var(--beige);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;margin-top:3.5rem;align-items:start;}
+.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:.9rem;}
+.contact-info>p{font-size:.91rem;color:var(--text-mid);line-height:1.82;margin-bottom:1.8rem;}
+.contact-item{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1rem;}
+.contact-icon{width:42px;height:42px;border-radius:6px;background:var(--navy);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.contact-item-text span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);margin-bottom:.08rem;}
+.contact-item-text a,.contact-item-text p{font-size:.86rem;color:var(--navy);font-weight:500;text-decoration:none;}
+.contact-item-text a:hover{color:var(--terra);}
+.socials{display:flex;gap:.65rem;margin-top:1.8rem;flex-wrap:wrap;}
+.social-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .95rem;border-radius:6px;background:var(--white);border:1px solid var(--border);color:var(--navy);font-size:.78rem;font-weight:500;text-decoration:none;transition:background .2s,color .2s;}
+.social-btn:hover{background:var(--navy);color:var(--amber);}
+.social-btn.whatsapp{background:#25D366;color:#fff;border-color:#25D366;}
+.social-btn.whatsapp:hover{background:#1da851;border-color:#1da851;color:#fff;}
+.social-btn.github-btn{background:var(--navy-dark);color:#fff;border-color:var(--navy-dark);}
+.social-btn.github-btn:hover{background:var(--amber);color:var(--navy);border-color:var(--amber);}
+.contact-form{background:var(--white);border-radius:10px;padding:2.4rem;border:1px solid var(--border);}
+.contact-form h3{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:1.4rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:.9rem;}
+.form-group{margin-bottom:.9rem;}
+.form-group label{display:block;font-size:.73rem;font-weight:600;color:var(--text-dark);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;}
+.form-group input,.form-group textarea{width:100%;padding:.7rem .95rem;border:1px solid var(--border);border-radius:4px;background:var(--beige);color:var(--text-dark);font-family:'DM Sans',sans-serif;font-size:.87rem;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--amber);}
+.form-group textarea{height:115px;resize:vertical;}
+.form-submit{width:100%;}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-dark);color:rgba(253,251,247,.6);padding:2.4rem 5%;text-align:center;}
+footer .footer-name{font-family:'Cormorant Garamond',serif;font-size:1.28rem;color:var(--white);font-weight:600;margin-bottom:.45rem;}
+footer p{font-size:.77rem;line-height:1.7;}
+footer span{color:var(--amber);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .68s,transform .68s;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .skills-cats{grid-template-columns:1fr 1fr;}
+  .lead-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:900px){
+  .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr;}
+  .hero-image-side{display:none;}
+  .projects-grid,.research-grid,.teaching-grid,.cert-grid,.books-grid{grid-template-columns:1fr 1fr;}
+  .edu-grid,.ach-list{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+}
+@media(max-width:600px){
+  .skills-cats,.projects-grid,.research-grid,.teaching-grid,.cert-grid,.lead-grid,.books-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .hero-stats{gap:1.4rem;}
+  section{padding:68px 5%;}
+  .about-values{grid-template-columns:1fr;}
+  .ach-list{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-box" id="lightboxBox">
+    <button class="lightbox-close" onclick="closeLightboxBtn()">✕</button>
+    <div class="lightbox-title" id="lightboxTitle">Certificate</div>
+    <div id="lightboxContent"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Eman <span>Ahmad</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#research" onclick="toggleMenu()">Research</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#books" onclick="toggleMenu()">Books</a>
+  <a href="#education" onclick="toggleMenu()">Education</a>
+  <a href="#achievements" onclick="toggleMenu()">Awards</a>
+  <a href="#leadership" onclick="toggleMenu()">Leadership</a>
+  <a href="#teaching" onclick="toggleMenu()">Community</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-accent-line"></div>
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <div class="hero-tag">✦ Portfolio 2026</div>
+      <h1 class="hero-name">Eman<br><em>Ahmad</em></h1>
+      <div class="hero-typing-wrap">
+        <span class="role-prefix">I am a </span><span id="typed-role"></span>
+      </div>
+      <p class="hero-bio">
+        Business Data Analytics student, published author, independent researcher, and Global Ambassador — transforming communities through data-driven insight, powerful storytelling, and relentless advocacy across Pakistan and beyond.
+      </p>
+      <div class="hero-btns">
+        <!-- ✅ Place Eman_Ahmad_CV.pdf in the same folder as this file -->
+        <a href="EMAN-AHMAD-CV.pdf" download class="btn-primary">⬇ Download CV</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+        <a href="https://github.com/emanahmad95" target="_blank" class="btn-github">⌥ GitHub</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">8.2<span>k+</span></div>
+          <div class="stat-label">Book Downloads</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">150<span>+</span></div>
+          <div class="stat-label">Students Mentored</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3<span>.</span></div>
+          <div class="stat-label">Global Ambassador Roles</div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="hero-image-side">
+      <div class="hero-photo-frame">
+        <!-- ✅ TO ADD PHOTO: delete the div below and replace with:
+             <img src="eman.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" /> -->
+        <img src="Emu2.png" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" /> -->
+      <div class="hero-badge badge-top"><div class="dot"></div> Global Ambassador × 3</div>
+      <div class="hero-badge badge-bottom"><div class="dot"></div> 8,200+ Book Downloads</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-box reveal">
+        <div class="about-img-frame">
+          <!-- ✅ TO ADD PHOTO: delete the div below and replace with:
+               <img src="eman.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" /> -->
+          <img src="Emu3.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" /> -->
+        </div>
+        <div class="about-decor-box"></div>
+        <div class="about-quote">"Empowering communities through data, words, and action."</div>
+      </div>
+      <div class="about-content reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">A Data-Driven <em>Changemaker</em></h2>
+        <p class="section-desc">
+          Eman Ahmad is a Business Data Analytics student at COMSATS University Islamabad, independent researcher, educator, and published author. She is a Global Youth Ambassador for the World Literacy Foundation and TheirWorld, and a Global Ambassador for Harvard Competitions. A founder, mentor to 150+ students, and community volunteer — she combines analytical thinking with creative leadership to drive real-world impact.
+        </p>
+        <div class="about-values">
+          <div class="value-card">
+            <h4>📊 Data Analytics</h4>
+            <p>Python, SQL, Tableau & Excel — turning complex data into actionable business insights.</p>
+          </div>
+          <div class="value-card">
+            <h4>🌍 Global Advocacy</h4>
+            <p>Three Global Ambassador roles championing literacy, youth rights & educational equity.</p>
+          </div>
+          <div class="value-card">
+            <h4>✍️ Published Author</h4>
+            <p>Books on Amazon KDP & Free Kids Books with 8,200+ downloads and reads worldwide.</p>
+          </div>
+          <div class="value-card">
+            <h4>🎓 STEM Educator</h4>
+            <p>Mentored 150+ students in Python, SQL, Maths, Science & English free of charge.</p>
+          </div>
+        </div>
+        <div style="margin-top:1.4rem;">
+          <p style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-light);margin-bottom:.7rem;">Languages</p>
+          <div class="langs-row">
+            <span class="lang-pill native">Urdu — Native</span>
+            <span class="lang-pill native">Punjabi — Native</span>
+            <span class="lang-pill">English — Professional</span>
+            <span class="lang-pill">French — Conversational</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label reveal">Expertise</div>
+    <h2 class="section-title reveal">Skills & <em>Competencies</em></h2>
+    <p class="section-desc reveal">A multidisciplinary skill set spanning data analytics, business intelligence, communication, and community leadership.</p>
+    <div class="skills-cats reveal">
+      <div class="skill-cat">
+        <div class="skill-cat-icon">📊</div>
+        <h3>Technical Skills</h3>
+        <div class="skill-tag-wrap">
+          <span class="skill-tag amber">Python</span>
+          <span class="skill-tag amber">SQL (MySQL)</span>
+          <span class="skill-tag amber">Tableau</span>
+          <span class="skill-tag amber">Microsoft Excel</span>
+          <span class="skill-tag amber">Data Visualization</span>
+          <span class="skill-tag amber">Data Cleaning & EDA</span>
+          <span class="skill-tag amber">Statistical Analysis</span>
+          <span class="skill-tag amber">Flask</span>
+          <span class="skill-tag amber">Reporting</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-icon">💼</div>
+        <h3>Business Skills</h3>
+        <div class="skill-tag-wrap">
+          <span class="skill-tag navy">Data Governance</span>
+          <span class="skill-tag navy">Business Intelligence</span>
+          <span class="skill-tag navy">ROI Analysis</span>
+          <span class="skill-tag navy">Operational Analysis</span>
+          <span class="skill-tag navy">Research Methods</span>
+          <span class="skill-tag navy">Survey Design</span>
+          <span class="skill-tag navy">SWOT Analysis</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-icon">🤝</div>
+        <h3>Soft Skills</h3>
+        <div class="skill-tag-wrap">
+          <span class="skill-tag terra">Problem Solving</span>
+          <span class="skill-tag terra">Public Speaking</span>
+          <span class="skill-tag terra">Leadership</span>
+          <span class="skill-tag terra">Team Collaboration</span>
+          <span class="skill-tag terra">Stakeholder Communication</span>
+          <span class="skill-tag terra">Research & Presentation</span>
+          <span class="skill-tag terra">Mentoring</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESEARCH ══ -->
+<section id="research">
+  <div class="section-inner">
+    <div class="section-label reveal">Academic Work</div>
+    <h2 class="section-title reveal">Research & <em>Publications</em></h2>
+    <p class="section-desc reveal">Independent quantitative research exploring the intersection of technology, education, and student behaviour.</p>
+    <div class="research-grid reveal">
+
+      <div class="research-card">
+        <div class="research-card-header">
+          <div class="research-icon">🤖</div>
+          <div class="research-meta">
+            <div class="research-type">Quantitative Research · In Progress</div>
+            <h3>Generative AI Use and Its Association with Learning Behaviors, Academic Confidence, and Problem-Solving Approaches Among Pakistani University Students</h3>
+          </div>
+        </div>
+        <div class="research-status"><span class="dot-green"></span> Currently Active — 2026</div>
+        <p>An independent quantitative research study investigating how Generative AI usage patterns relate to student learning outcomes, academic confidence, and problem-solving approaches across Pakistani universities. Responsible for full research lifecycle — from literature review and survey design to statistical analysis, interpretation, and manuscript preparation.</p>
+        <div class="research-tags">
+          <span class="research-tag">Generative AI</span>
+          <span class="research-tag">Education Research</span>
+          <span class="research-tag">Quantitative Methods</span>
+          <span class="research-tag">Survey Design</span>
+          <span class="research-tag">Statistical Analysis</span>
+          <span class="research-tag">Pakistan</span>
+        </div>
+        <div class="research-btns">
+          <!-- ✅ Replace # with actual GitHub repo link when available -->
+          <a href="https://github.com/emanahmad95" target="_blank" class="btn-small-github">⌥ View on GitHub</a>
+          <a href="#contact" class="btn-small-outline">📩 Request Paper</a>
+        </div>
+      </div>
+
+     
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label reveal">Career</div>
+    <h2 class="section-title reveal">Work <em>Experience</em></h2>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header"><span class="tl-role">Data Analytics Intern</span><span class="tl-date">2026 – Present</span></div>
+          <div class="tl-org">Excelerate</div>
+          <div class="tl-desc"><ul>
+            <li>Work with real-world datasets and business analytics projects.</li>
+            <li>Support data cleaning, reporting, visualization, and insight generation.</li>
+            <li>Collaborate within remote international project teams.</li>
+          </ul></div>
+          <div class="tl-tags"><span class="tl-tag">Data Analytics</span><span class="tl-tag">Visualization</span><span class="tl-tag">Remote Work</span><span class="tl-tag">International</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header"><span class="tl-role">Data Analyst Intern</span><span class="tl-date">2024</span></div>
+          <div class="tl-org">National Automotive Components (NAC)</div>
+          <div class="tl-desc"><ul>
+            <li>Cleaned, validated, and organized operational datasets.</li>
+            <li>Produced analytical reports and visualizations for business processes.</li>
+            <li>Applied Excel, SQL, and data analysis techniques to identify trends and improve reporting quality.</li>
+          </ul></div>
+          <div class="tl-tags"><span class="tl-tag">Excel</span><span class="tl-tag">SQL</span><span class="tl-tag">Data Cleaning</span><span class="tl-tag">Reporting</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header"><span class="tl-role">Founder & President</span><span class="tl-date">2021 – Present</span></div>
+          <div class="tl-org">The Greenies Club</div>
+          <div class="tl-desc"><ul>
+            <li>Founded and led a student environmental awareness initiative.</li>
+            <li>Organized tree plantation campaigns resulting in 50+ trees planted.</li>
+            <li>Coordinated environmental workshops, volunteer programs, and animal welfare activities.</li>
+            <li>Managed planning, outreach, and volunteer engagement.</li>
+          </ul></div>
+          <div class="tl-tags"><span class="tl-tag">Leadership</span><span class="tl-tag">Environment</span><span class="tl-tag">Community</span><span class="tl-tag">Volunteering</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal">Featured <em>Projects</em></h2>
+    <p class="section-desc reveal">Data, analytics, and full-stack projects showcasing analytical thinking and technical execution.</p>
+    <div class="projects-grid reveal">
+
+      <div class="project-card">
+        <div class="project-thumb t1">
+          <span class="project-type-badge">Data Governance</span>
+          <div class="project-thumb-icon">🛒</div>
+        </div>
+        <div class="project-body">
+          <h3>E-Commerce Sales Governance & Insights</h3>
+          <div class="project-date">May 2026 – Jun 2026</div>
+          <ul>
+            <li>End-to-end analytics project on e-commerce sales performance.</li>
+            <li>Structured and analyzed transactional datasets to identify sales trends and revenue patterns.</li>
+            <li>Designed with focus on data governance, consistency checks, and actionable business reporting.</li>
+          </ul>
+          <!-- ✅ Replace # with GitHub link -->
+          <a href="https://github.com/emanahmad95/E-Commerce-Sales-Governance-and-Insights" target="_blank" class="project-link">⌥ View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb t2">
+          <span class="project-type-badge">Full-Stack</span>
+          <div class="project-thumb-icon">💸</div>
+        </div>
+        <div class="project-body">
+          <h3>XPNS — Expense Tracker Application</h3>
+          <div class="project-date">2026</div>
+          <ul>
+            <li>Full-stack expense tracker using Python, Flask, JavaScript, JSON & Excel integration.</li>
+            <li>Implemented OOP architecture and automated Excel reporting via openpyxl.</li>
+            <li>Added validation and exception-handling systems for reliability.</li>
+          </ul>
+          <a href="https://github.com/emanahmad95/XPNS-Expense-Tracker" target="_blank" class="project-link">⌥ View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb t3">
+          <span class="project-type-badge">Business Analytics</span>
+          <div class="project-thumb-icon">👗</div>
+        </div>
+        <div class="project-body">
+          <h3>A.Z. Fashion Operational Analysis</h3>
+          <div class="project-date">2025</div>
+          <ul>
+            <li>Identified 59.1% operational failure rate using Advanced Excel and SQL analysis.</li>
+            <li>Proposed scheduling and inventory improvements to boost profitability.</li>
+          </ul>
+          <a href="https://github.com/emanahmad95/AZ-fashion-operations-analytics" target="_blank" class="project-link">⌥ View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb t4">
+          <span class="project-type-badge">Field Analysis</span>
+          <div class="project-thumb-icon">🏗️</div>
+        </div>
+        <div class="project-body">
+          <h3>Ghazi Barotha Development Authority Analysis</h3>
+          <div class="project-date">2025</div>
+          <ul>
+            <li>Field-based organizational and operational evaluation of GBTI.</li>
+            <li>Produced SWOT and performance assessment reports.</li>
+            <li>Evaluated operational structure, funding dependencies, and institutional challenges.</li>
+          </ul>
+          <a href="https://github.com/emanahmad95/Corporate-Management-Analysis-GBTI" target="_blank" class="project-link">⌥ View on GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOKS ══ -->
+<section id="books">
+  <div class="section-inner">
+    <div class="section-label reveal">Publications</div>
+    <h2 class="section-title reveal">Authored <em>Books</em></h2>
+    <p class="section-desc reveal">Published on Amazon Kindle Direct Publishing & Free Kids Books — reaching 8,200+ readers and downloads worldwide.</p>
+    <div class="books-grid reveal">
+
+      <div class="book-card">
+        <div class="book-cover">📊</div>
+        <h3>The Data Explorer's Guide: From Basics to Brilliance</h3>
+        <p>An educational introduction to data analytics and visualization concepts — making data science accessible for every curious mind.</p>
+        <span class="book-year">Amazon KDP · Educational</span>
+        <!-- ✅ Replace # with real Amazon link -->
+        <br><a href="https://www.amazon.com/Data-Explorers-Guide-Basics-Brilliance-ebook/dp/B0DKQ29YDF" target="_blank" class="book-visit-btn">🔗 View on Amazon</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">🍵</div>
+        <h3>The Whimsical Adventures of Tilly and the Magical Teacup</h3>
+        <p>Author and illustrator of this beloved children's fiction — achieved 8,200+ downloads and reads across digital platforms worldwide.</p>
+        <span class="book-year">Amazon KDP & Free Kids Books · 8,200+ Downloads</span>
+        <!-- ✅ Replace # with real Amazon link -->
+        <br><a href="https://freekidsbooks.org/the-whimsical-adventures-of-tilly-and-the-magical-teacup/" target="_blank" class="book-visit-btn">🔗 View on Amazon</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">✨</div>
+        <h3>Short Stories, Articles & Essays</h3>
+        <p>Additional short stories, articles, essays, and educational content published independently across digital platforms.</p>
+        <span class="book-year">Various Platforms · Ongoing</span>
+        <br><a href="https://www.amazon.com/author/emanahmad" target="_blank" class="book-visit-btn">🔗 Explore More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label reveal">Academic</div>
+    <h2 class="section-title reveal">Education <em>Background</em></h2>
+    <div class="edu-grid reveal">
+
+      <div class="edu-card">
+        <div class="edu-year">2025 – 2029</div>
+        <div class="edu-degree">BSc Business Data Analytics</div>
+        <div class="edu-school">COMSATS University Islamabad</div>
+        <div class="edu-detail">Studying Business Data Analytics with focus on data-driven decision-making, statistical modelling, business intelligence, data governance, and analytical problem-solving in real-world business contexts.</div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-year">Graduated 2025</div>
+        <div class="edu-degree">Higher Secondary School Certificate</div>
+        <div class="edu-school">Government Girls Higher Secondary School, Muridke</div>
+        <div class="edu-detail">Pre-Engineering / Computer Science stream. Active participant in academic competitions, leadership activities, and community service throughout the programme.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CERTIFICATIONS ══ -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="section-title reveal"><em>Certifications</em> & Training</h2>
+    <p class="section-desc reveal">Click "View Certificate" on any card to open the certificate image. Save your certificate images in the same folder as this HTML file.</p>
+    <div class="cert-grid reveal">
+
+      <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">🏅</div>
+          <div class="cert-info">
+            <h4>Professional Certificate — Project Management</h4>
+            <p class="cert-issuer">Google</p>
+            <p>Coursera · Professional</p>
+          </div>
+        </div>
+        <!-- ✅ Save your certificate image as cert_google_pm.jpg in the same folder -->
+        <button class="cert-visit-btn" onclick="openCert('Google — Project Management', 'Foundations of Project Management.jpg')">🔍 View Certificate</button>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">📊</div>
+          <div class="cert-info">
+            <h4>Professional Certificate — Data Analysis</h4>
+            <p class="cert-issuer">Google</p>
+            <p>Coursera · Professional</p>
+          </div>
+        </div>
+        <button class="cert-visit-btn" onclick="openCert('Google — Professional Certificate for Data Analysis', 'Professional Certificate — Data Analysis.jpg')">🔍 View Certificate</button>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-info">
+            <h4>Professional Certificate — Data Science</h4>
+            <p class="cert-issuer">Harvard Online</p>
+            <p>HarvardX · Professional</p>
+          </div>
+        </div>
+        <button class="cert-visit-btn" onclick="openCert('Harvard Online — Professional Certificate for Data Science', 'Harvard Data science.png')">🔍 View Certificate</button>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">🌍</div>
+          <div class="cert-info">
+            <h4>TALENT OLYMPIAD 24</h4>
+            <p class="cert-issuer">Great Future Pakistan</p>
+            <p>2024</p>
+          </div>
+        </div>
+        <button class="cert-visit-btn" onclick="openCert('TheirWorld — Global Youth Ambassador', 'TALENT OLYMPIAD 24.jpg')">🔍 View Certificate</button>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">📚</div>
+          <div class="cert-info">
+            <h4>Process Data From Dirty To Clean</h4>
+            <p class="cert-issuer">Google</p>
+            <p>2025</p>
+          </div>
+        </div>
+        <button class="cert-visit-btn" onclick="openCert('World Literacy Foundation — Global Ambassador', 'Process data from Dirty to clean.jpg')">🔍 View Certificate</button>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">🏛️</div>
+          <div class="cert-info">
+            <h4>TALENT OLYMPIAD 25</h4>
+            <p class="cert-issuer">Great Future Pakistan</p>
+            <p>2025</p>
+          </div>
+        </div>
+        <button class="cert-visit-btn" onclick="openCert('Harvard Competitions — Global Ambassador', 'TALENT OLYMPIAD 25.jpg')">🔍 View Certificate</button>
+      </div>
+
+       <div class="cert-card">
+        <div class="cert-top">
+          <div class="cert-icon">🏛️</div>
+          <div class="cert-info">
+            <h4>CS50x Puzzle Day 2025</h4>
+            <p class="cert-issuer">Harvad University</p>
+            <p>2025</p>
+          </div>
+        </div>
+        <button class="cert-visit-btn" onclick="openCert('Harvard Competitions — Global Ambassador', 'CS50x Puzzle Day 2025_page-0001.jpg')">🔍 View Certificate</button>
+      </div>
+
+
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACHIEVEMENTS ══ -->
+<section id="achievements">
+  <div class="section-inner">
+    <div class="section-label reveal">Recognition</div>
+    <h2 class="section-title reveal">Awards & <em>Achievements</em></h2>
+    <div class="ach-list reveal">
+
+      <div class="ach-item">
+        <div class="ach-num">01</div>
+        <div class="ach-text">
+          <h4>International Silver Award — Queen's Commonwealth Essay Competition</h4>
+          <p>Recognised internationally for outstanding essay writing.</p>
+          <div class="ach-sub">Among 34,939 participants worldwide</div>
+        </div>
+      </div>
+
+      <div class="ach-item">
+        <div class="ach-num">02</div>
+        <div class="ach-text">
+          <h4>International Bronze Award — HRCA Art Competition</h4>
+          <p>Awarded an international bronze medal for artistic achievement in the HRCA 2019 competition.</p>
+        </div>
+      </div>
+
+      <div class="ach-item">
+        <div class="ach-num">03</div>
+        <div class="ach-text">
+          <h4>Top 10 — Citywide Talent Hunt Competition</h4>
+          <p>Ranked in the Top 10 across Physics, Mathematics, Biology & English among hundreds of participants.</p>
+        </div>
+      </div>
+
+      <div class="ach-item">
+        <div class="ach-num">04</div>
+        <div class="ach-text">
+          <h4>School Prefect — Two Consecutive Terms</h4>
+          <p>Elected by peers and staff as School Prefect for two terms — demonstrating leadership and trustworthiness.</p>
+        </div>
+      </div>
+
+      <div class="ach-item">
+        <div class="ach-num">05</div>
+        <div class="ach-text">
+          <h4>8,200+ Book Downloads Worldwide</h4>
+          <p>"The Whimsical Adventures of Tilly and the Magical Teacup" — 8,200+ downloads and reads across digital platforms.</p>
+        </div>
+      </div>
+
+      <div class="ach-item">
+        <div class="ach-num">06</div>
+        <div class="ach-text">
+          <h4>150+ Students Mentored in STEM</h4>
+          <p>Provided free instruction in Python, SQL, Data Analysis, Maths, Science & English through online and in-person sessions.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ LEADERSHIP ══ -->
+<section id="leadership">
+  <div class="section-inner">
+    <div class="section-label reveal">Roles</div>
+    <h2 class="section-title reveal">Leadership & <em>Advocacy</em></h2>
+    <div class="lead-grid reveal">
+
+      <div class="lead-card">
+        <div class="lead-logo">🌍</div>
+        <h3>World Literacy Foundation</h3>
+        <span class="role-tag">Global Youth Ambassador</span>
+        <p>Advocating for literacy and equitable access to education through global awareness campaigns and educational content.</p>
+      </div>
+
+      <div class="lead-card">
+        <div class="lead-logo">🌱</div>
+        <h3>TheirWorld</h3>
+        <span class="role-tag">Youth Ambassador</span>
+        <p>Supporting youth-led advocacy for educational opportunity through international engagement and community outreach.</p>
+      </div>
+
+      <div class="lead-card">
+        <div class="lead-logo">🏛️</div>
+        <h3>Harvard Competitions</h3>
+        <span class="role-tag">Global Ambassador</span>
+        <p>Promoting student leadership programs and educational opportunities, supporting innovation and entrepreneurship in youth communities.</p>
+      </div>
+
+      <div class="lead-card">
+        <div class="lead-logo">♻️</div>
+        <h3>The Greenies Club</h3>
+        <span class="role-tag">Founder & President</span>
+        <p>Founded a student environmental initiative — organized tree plantation drives with 50+ trees planted and coordinated volunteer programs.</p>
+      </div>
+
+      <div class="lead-card">
+        <div class="lead-logo">📖</div>
+        <h3>Community STEM Educator</h3>
+        <span class="role-tag">Mentor · 2021 – Present</span>
+        <p>Free instruction in Python, SQL, Data Analysis, Maths, Science & English — mentoring 150+ students through online and in-person sessions.</p>
+      </div>
+
+      <div class="lead-card">
+        <div class="lead-logo">❤️</div>
+        <h3>Community Outreach Volunteer</h3>
+        <span class="role-tag">Volunteer · 2021 – Present</span>
+        <p>Organizes visits to local orphanages providing books, gifts, and educational materials — promoting literacy, creativity, and student engagement.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEACHING & COMMUNITY ══ -->
+<section id="teaching">
+  <div class="section-inner">
+    <div class="section-label reveal">Community</div>
+    <h2 class="section-title reveal">Teaching & <em>Service</em></h2>
+    <p class="section-desc reveal">Giving back to the community through free education, mentorship, and volunteer service since 2021.</p>
+    <div class="teaching-grid reveal">
+
+      <div class="teach-card">
+        <div class="teach-icon">🎓</div>
+        <h3>Community STEM Educator & Mentor</h3>
+        <div class="teach-date">2021 – Present</div>
+        <ul>
+          <li>Provided free instruction in Python, SQL, Data Analysis, Mathematics, Science, and English.</li>
+          <li>Developed educational resources and project-based learning activities.</li>
+          <li>Supported students in strengthening analytical, technical, and communication skills.</li>
+          <li>Conducted both online and in-person learning sessions.</li>
+        </ul>
+        <div class="teach-highlight">🎯 150+ Students Mentored</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-icon">❤️</div>
+        <h3>Community Outreach Volunteer</h3>
+        <div class="teach-date">2021 – Present</div>
+        <ul>
+          <li>Organizes regular visits to local orphanages.</li>
+          <li>Provides books, gifts, crocheted items, and educational materials.</li>
+          <li>Conducts recreational and learning activities for children.</li>
+          <li>Promotes literacy, creativity, and student engagement through volunteer service.</li>
+        </ul>
+        <div class="teach-highlight">🌱 4+ Years of Service</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal">Let's <em>Connect</em></h2>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Open to collaborations, research, opportunities & conversations</h3>
+        <p>Whether you want to collaborate on a project, invite a speaker, discuss research, or simply connect — Eman would love to hear from you.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-item-text">
+            <span>Email</span>
+            <a href="mailto:imaanahmad95@gmail.com">imaanahmad95@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <span>Location</span>
+            <p>Islamabad, Pakistan</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <div class="contact-item-text">
+            <span>LinkedIn</span>
+            <a href="https://linkedin.com/in/eman-ahmad-34000631b/" target="_blank">linkedin.com/in/eman-ahmad</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💻</div>
+          <div class="contact-item-text">
+            <span>GitHub</span>
+            <a href="https://github.com/emanahmad95" target="_blank">github.com/emanahmad95</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <span>Phone</span>
+            <a href="tel:+923236096386">+92 323 609 6386</a>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="https://linkedin.com/in/eman-ahmad-34000631b/" target="_blank" class="social-btn">💼 LinkedIn</a>
+          <a href="https://github.com/emanahmad95" target="_blank" class="social-btn github-btn">⌥ GitHub</a>
+          <a href="https://wa.me/923236096386" target="_blank" class="social-btn whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Your first name" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Your last name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Collaboration, research, opportunity, or hello!" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project, research, opportunity, or just say hello..."></textarea>
+        </div>
+        <button class="btn-primary form-submit" onclick="handleFormSubmit()">Send Message ✦</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-name">Eman Ahmad</div>
+  <p>Business Data Analytics · Independent Researcher · Global Ambassador × 3 · Published Author</p>
+  <p>Islamabad, Pakistan &nbsp;·&nbsp; <span>© 2025</span> All rights reserved.</p>
+</footer>
+
+<script>
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20);
+});
+
+// MOBILE MENU
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+
+// TYPING ANIMATION
+const roles=['Business Data Analyst','Independent Researcher','Global Ambassador','Published Author','STEM Educator','Community Leader','Youth Advocate'];
+let ri=0,ci=0,del=false;
+const el=document.getElementById('typed-role');
+function type(){
+  const cur=roles[ri];
+  if(!del){
+    el.textContent=cur.slice(0,++ci);
+    if(ci===cur.length){del=true;setTimeout(type,1900);return;}
+  } else {
+    el.textContent=cur.slice(0,--ci);
+    if(ci===0){del=false;ri=(ri+1)%roles.length;}
+  }
+  setTimeout(type,del?52:92);
+}
+type();
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*75);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// CERTIFICATE LIGHTBOX
+function openCert(title,imgFile){
+  document.getElementById('lightboxTitle').textContent=title;
+  const content=document.getElementById('lightboxContent');
+  const img=new Image();
+  img.onload=function(){
+    content.innerHTML='';
+    img.style.cssText='display:block;max-width:90vw;max-height:80vh;object-fit:contain;';
+    content.appendChild(img);
+  };
+  img.onerror=function(){
+    content.innerHTML=`
+      <div class="lightbox-placeholder">
+        <div class="big">🏅</div>
+        <p><strong>${title}</strong></p>
+        <p>Certificate image not found.<br>To display it, save your certificate image as<br><code>${imgFile}</code><br>in the same folder as this HTML file.</p>
+      </div>`;
+  };
+  img.src=imgFile;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e.target===document.getElementById('lightbox'))closeLightboxBtn();
+}
+function closeLightboxBtn(){
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightboxBtn();});
+
+// FORM
+function handleFormSubmit(){
+  alert('Message sent! To make this functional, connect to Formspree or EmailJS.');
+}
+</script>
+</body>
+</html>
